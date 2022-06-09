@@ -9,5 +9,6 @@ use App\Http\Controllers\Api\V1\User\UserController;
 
     Route::group(['prefix' => 'user'] , function(){
 
+        Route::post('/signup',[UserController::class, 'signUp'])->name("signUp");
     });
 
