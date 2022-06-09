@@ -33,4 +33,29 @@ class UserController extends Controller{
 
     }
 
+    public function login(Request $request){
+        
+        $user = User :: where("username",$request->username)->first();
+        if($user){
+        $password = hash("sha256", $request->password);//hashing the entered password by the user
+        if($password==$user->password){
+
+            return response()->json([
+                "status" => "Welcome!",
+                "id" => $user -> id,
+                "is_admin" => $user -> is_admin
+                
+            ], 200);
+
+            }
+        }
+
+        return response()->json([
+
+            "status" => "Wrong Username or Password !",
+        
+        ], 200);
+
+    }
+
 }
