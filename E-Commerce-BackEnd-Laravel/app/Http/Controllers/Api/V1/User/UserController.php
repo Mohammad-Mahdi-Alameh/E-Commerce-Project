@@ -18,6 +18,12 @@ class UserController extends Controller
 {
     public $token = true;
 
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+    }
+
+
     /**
      * Register user.
      *
@@ -103,7 +109,16 @@ class UserController extends Controller
             'token' => $jwt_token,
         ]);
     }
-  
+
+    public function logout() {
+        Auth::guard('api')->logout();
+    
+        return response()->json([
+            'status' => 'success',
+            'message' => 'logout'
+        ], 200);
+    }    
+   
     
   
   
