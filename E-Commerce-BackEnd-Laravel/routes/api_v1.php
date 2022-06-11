@@ -38,7 +38,8 @@ Route::group(['prefix' => 'admin'] , function(){
            
             Route::get('/get_categories',[AdminController::class, 'getCategories'])->name("getCategories");
             
-            Route::get('/get_items',[AdminController::class, 'getItems'])->name("getItems");
+            Route::get('/get_items/{category_name?}',[AdminController::class, 'getItems'])->name("getItems");
+            
         
         });
     });

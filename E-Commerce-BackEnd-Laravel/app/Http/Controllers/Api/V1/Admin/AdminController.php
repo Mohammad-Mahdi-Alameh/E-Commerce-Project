@@ -99,7 +99,14 @@ class AdminController extends Controller
         return $categories;
     }
 
-    public function getItems(){
+    public function getItems($category_name = null){
+        if($category_name){
+            
+            $record = Category::where("name","=",$category_name)->get();
+            $category_id = json_decode($record,true)[0]["id"];
+            $items = Item :: where("category_id","=",$category_id) ->get();
+            return $items;
+        }
         
         $items=Item::all();
         return $items;
