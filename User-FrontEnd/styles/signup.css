@@ -15,6 +15,8 @@ body {
     font-family: sans-serif;
     font-weight: 400;
     background: var(--bgColor);
+    background: url("../assets/bg.jpg");
+    background-size:100% ;
 }
 
 nav#nav {
@@ -71,41 +73,30 @@ nav#nav {
 .container {
     display: flex;
     padding: 48px 180px;
+    justify-content: center;
 }
 
 .left-section, .right-section {
-    width: 50%;
+    width: 100%;
 }
 
 .right-section {
+    margin-top:2%;
+    margin-left:55%;
     padding-left: 20px;
 }
 
-.left-heading {
-    font-size: 20px;
-    font-weight: normal;
-    line-height: 35px;
-}
-
-.image {
-    margin-top: 15px;
-    overflow: hidden;
-}
-
-.image img {
-    width: 100%;
-    height: 100%;
-}
 
 .form-heading {
     font-size: 30px;
-    color: #333;
+    color: rgb(12, 15, 29);
 }
 
 .text {
     margin: 10px 0;
-    font-weight: normal;
+    font-weight: bolder;
     font-size: 17px;
+    color: rgb(12, 15, 29);
 }
 
 #formSection {
@@ -170,7 +161,7 @@ h3{
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
     margin: 10px 0px;
     padding: 10px 20px;
-    background: linear-gradient(#047eaa,#047eaa);
+    background: linear-gradient(rgb(22, 28, 55),rgb(23, 29, 56));
     border: 0;
     color: var(--colorWhite);
 }
