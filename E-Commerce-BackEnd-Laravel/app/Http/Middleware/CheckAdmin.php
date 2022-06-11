@@ -23,7 +23,7 @@ class CheckAdmin
         $user = Auth::user();
         $is_admin = json_decode($user,true)["is_admin"];
         if($is_admin){
-            dd("Welcome Admin !");
+            return $next($request);
         }else{
             dd("Dear User Please Go To Your Page !");
             

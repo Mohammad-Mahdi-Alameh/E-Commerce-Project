@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Api\V1\Auth\JWTAuthController;
 use App\Http\Controllers\Api\V1\User\UserController;
+use App\Http\Controllers\Api\V1\Admin\AdminController;
 
 
 Route::group(['prefix' => 'user'] , function(){
@@ -13,7 +14,6 @@ Route::group(['prefix' => 'user'] , function(){
     Route::post('/login',[JWTAuthController::class, 'login'])->name("login");
     
     Route::post('/signup',[JWTAuthController::class, 'register'])->name("register");
-    
     
     Route::group(['middleware' => 'auth.jwt'], function($router) {
         
@@ -31,7 +31,8 @@ Route::group(['prefix' => 'admin'] , function(){
         
         Route::group(['middleware' => 'admin.check'], function($router) {
             
-            Route::get('/test',[UserController::class, 'Test'])->name("test");
+            // Route::get('/test',[UserController::class, 'Test'])->name("test");
+            Route::post('/add_category',[AdminController::class, 'addCategory'])->name("addCategory");
 
         });
     });
