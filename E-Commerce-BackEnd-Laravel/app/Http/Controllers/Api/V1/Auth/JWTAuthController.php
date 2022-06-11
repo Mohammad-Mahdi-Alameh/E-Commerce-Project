@@ -88,12 +88,13 @@ class JWTAuthController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Invalid Usernname or Password',
-            ], Response::HTTP_UNAUTHORIZED);
+            ]);
         }
-  
+        $user = Auth::user();
         return response()->json([
             'success' => true,
             'token' => $jwt_token,
+            'is_admin' => $user->is_admin,
         ]);
     }
 
