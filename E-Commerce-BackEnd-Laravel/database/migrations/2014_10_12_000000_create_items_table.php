@@ -18,14 +18,14 @@ class CreateItemsTable extends Migration
             $table->string('name');
             $table->string('price');
             $table->string('trade_mark');
-            $table->timestamp('model')->nullable();
+            $table->string('model')->nullable();
             $table->string('image');
             $table->string('description')->nullable();
-            $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->nullable();
             $table->string('usage')->nullable();
             //$table->rememberToken();
             $table->timestamps();
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->nullable();
         });
     }
 

@@ -33,7 +33,8 @@ Route::group(['prefix' => 'admin'] , function(){
             
             // Route::get('/test',[UserController::class, 'Test'])->name("test");
             Route::post('/add_category',[AdminController::class, 'addCategory'])->name("addCategory");
-
+            
+            Route::post('/add_item',[AdminController::class, 'addItem'])->name("addtem");
         });
     });
 });
