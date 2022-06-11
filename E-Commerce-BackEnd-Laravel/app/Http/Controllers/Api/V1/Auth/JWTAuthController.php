@@ -48,7 +48,7 @@ class JWTAuthController extends Controller
         ]);
 
         if($validator->fails()) {
-            return response()->json($validator->errors(), 401);
+            return response()->json(["message" => "Validator Failed ! Check your submiited values again!"]);
         }
 
      
@@ -67,15 +67,13 @@ class JWTAuthController extends Controller
 
         $user->save();
 
-        if ($this->token) {
-            return $this->login($request);
-        }
-
+        $input = $request->only('username', 'password');  
+        $jwt_token = JWTAuth::attempt($input);
 
 
         return response()->json([
             'message' => 'User successfully registered',
-            'user' => $user
+            'token' => $jwt_token,
         ], Response::HTTP_OK);
     }
 

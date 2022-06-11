@@ -40,10 +40,7 @@ login.addEventListener("click", function(event){
         let result = response.data;
    
         let message = result.success;
-       
-
-        console.log(message);
-        
+               
         if(message === true){
               
             let token = result.token;
