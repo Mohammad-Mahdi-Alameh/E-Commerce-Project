@@ -35,6 +35,9 @@ Route::group(['prefix' => 'admin'] , function(){
             Route::post('/add_category',[AdminController::class, 'addCategory'])->name("addCategory");
             
             Route::post('/add_item',[AdminController::class, 'addItem'])->name("addtem");
+           
+            Route::get('/get_categories',[AdminController::class, 'getCategories'])->name("getCategories");
+        
         });
     });
 });

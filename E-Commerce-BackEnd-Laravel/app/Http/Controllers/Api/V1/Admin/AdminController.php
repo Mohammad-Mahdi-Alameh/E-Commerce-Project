@@ -92,5 +92,11 @@ class AdminController extends Controller
             'category' => $item -> category_id,
         ], Response::HTTP_OK);
     }
+
+    public function getCategories(){
+        
+        $categories=Category::all();
+        return $categories;
+    }
   
 }
