@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  .top-nav {
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    
+  }
+  a{
+    color: white;
+  }
+
+  .hero {
+    background-color: rgb(85, 187, 151);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    position: relative;
+    
+  }
+  .btn {
+    padding: 14px 10px;
+    border: none;
+    border-radius: 5px;
+  }
+  .container {
+    padding: 0 6vw;
+    width: 100%;
+  }
+  
+  .btn-green {
+    background-color: #04AA6D;
+    color: #fff;
+    font-weight: bold;
+    font-size: medium;
+    cursor: pointer;
+  }
+  .links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .links > li {
+    margin-right: 40px;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .links > li:first-child {
+    text-decoration: underline;
+  }
+  
+  .links > li:last-child {
+    margin-left: 0;
+  }
+  .first-container,.second-container{
+      width: 85%;
+      margin-top: 50px;
+      margin-bottom: 150px;
+      margin-left: 150px;
+      display: flex;
+      
+      height: 25vh;
+      text-align: center;
+     
+  }
+  .first-part{
+    width: 30vw;
+    padding: 5px;
+    text-align: center;
+    margin-right: 20px;
+    background-color: rgb(185, 68, 68);
+    height: 30vh;
+  }
+  .second-part{
+    width: 30vw;
+    padding: 5px;
+    text-align: center;
+    margin-right: 20px;
+    background-color: rgb(175, 152, 152);
+    height: 30vh;
+  }
+  .third-part{
+    width: 30vw;
+    padding: 5px;
+    text-align: center;
+    margin-right: 20px;
+    background-color: rgb(185, 56, 56);
+    height: 30vh;
+  }
+.fourth-part{
+  width: 30vw;
+  padding: 5px;
+  text-align: center;
+  background-color: rgb(185, 146, 146);
+  height: 30vh;
+}
+
+
+@media only screen and (max-width: 1000px) {
+  .mobile {
+    flex-direction: column;
+    /*margin: 5px 2.4rem;*/
+  }
+  .first-part,.second-part,.third-part,.fourth-part{
+    margin-top: 10px;
+    width: 50%;
+    text-align: center;
+    
+
+  }
+}
