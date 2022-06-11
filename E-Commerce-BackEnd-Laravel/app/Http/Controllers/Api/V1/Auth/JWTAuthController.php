@@ -105,10 +105,10 @@ class JWTAuthController extends Controller
             'message' => 'logout'
         ], 200);
     }    
-     
-    public function refresh()
+
+    public function getLoggedInUser()
     {
-        return $this->respondWithToken(auth()->refresh());
+        return response()->json(auth()->user());
     }
     
   

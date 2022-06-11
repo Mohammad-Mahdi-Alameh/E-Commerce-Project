@@ -19,7 +19,8 @@ Route::group(['prefix' => 'user'] , function(){
         
         Route::post('/logout',[JWTAuthController::class, 'logout'])->name("logout");
         
+        Route::get('/get_logged_user',[JWTAuthController::class, 'getLoggedInUser'])->name("getLoggedInUser");
+        
         // Route::get('/test',[UserController::class, 'Test'])->name("test");
     });
 });
-

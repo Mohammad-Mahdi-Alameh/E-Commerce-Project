@@ -19,10 +19,11 @@ class GetUserFromToken
     {
         $user = Auth::user();
         if($user){
-            echo"I'm Logged In!";
+            // echo"I'm Logged Out!";
             return $next($request);
         }else{
-            dd("I'm Logged Out!");
+            dd("Unauthenticated !");
+            
         }
 
     }
