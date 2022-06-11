@@ -37,6 +37,8 @@ Route::group(['prefix' => 'admin'] , function(){
             Route::post('/add_item',[AdminController::class, 'addItem'])->name("addtem");
            
             Route::get('/get_categories',[AdminController::class, 'getCategories'])->name("getCategories");
+            
+            Route::get('/get_items',[AdminController::class, 'getItems'])->name("getItems");
         
         });
     });

@@ -98,5 +98,11 @@ class AdminController extends Controller
         $categories=Category::all();
         return $categories;
     }
+
+    public function getItems(){
+        
+        $items=Item::all();
+        return $items;
+    }
   
 }
