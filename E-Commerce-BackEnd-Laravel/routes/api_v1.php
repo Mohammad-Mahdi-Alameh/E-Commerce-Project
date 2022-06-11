@@ -24,3 +24,15 @@ Route::group(['prefix' => 'user'] , function(){
         // Route::get('/test',[UserController::class, 'Test'])->name("test");
     });
 });
+
+Route::group(['prefix' => 'admin'] , function(){
+    
+    Route::group(['middleware' => 'auth.jwt'], function($router) {
+        
+        Route::group(['middleware' => 'admin.check'], function($router) {
+            
+            Route::get('/test',[UserController::class, 'Test'])->name("test");
+
+        });
+    });
+});

@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Auth;
 
-class GetUserFromToken
+class CheckAdmin
 {
     /**
      * Handle an incoming request.
@@ -15,14 +15,17 @@ class GetUserFromToken
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
+
+   
+
     public function handle(Request $request, Closure $next)
     {
         $user = Auth::user();
-        if($user){
-            // echo"I'm Logged Out!";
-            return $next($request);
+        $is_admin = json_decode($user,true)["is_admin"];
+        if($is_admin){
+            dd("Welcome Admin !");
         }else{
-            dd("Unauthenticated !");
+            dd("Dear User Please Go To Your Page !");
             
         }
 
