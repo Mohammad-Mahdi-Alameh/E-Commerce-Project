@@ -5,15 +5,26 @@
     <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
     <link href="./styles.css" rel="stylesheet">
-    <title>Hello World!</title>
+    <title>E-Commerce Admin Landing Page</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    and Electron <span id="electron-version"></span>.
-
-    <!-- You can also require other files to run in this process -->
-    <script src="./renderer.js"></script>
+      <div class="hero container">
+          <!-- Start Navigation Bar -->
+          <nav class="top-nav">
+              <ul class="links">
+                  
+                  <a class="divLink" href="./pages/login.html"><button class="btn btn-blue" id="login">Login</button></a>
+                  
+                  
+              </ul>
+          </nav>
+          <div class="main">
+          </div>
+      </div>
+      <div id="flex-container">
+  
+      </div>
+  
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </body>
 </html>
