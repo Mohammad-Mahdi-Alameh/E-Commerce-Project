@@ -18,4 +18,25 @@ function viewCategories() {
    
    
     })
+
+    .then(function (response) {
+   
+        let result = response.data;
+        
+        var string="";
+
+        result.forEach(element=>{
+                string += '<div id="flex-item"><ul>'
+                
+                                +'<li>' + element.name + '</li>' 
+                                
+                                +'</ul></div>'
+    });
+
+flex_container.innerHTML=string; 
+
+
+});
+
+            
 }
