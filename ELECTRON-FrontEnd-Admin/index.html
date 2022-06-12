@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-    <link href="./styles.css" rel="stylesheet">
-    <title>E-Commerce Admin Landing Page</title>
-  </head>
-  <body>
-      <div class="hero container">
-          <!-- Start Navigation Bar -->
-          
-          <div class="main">
-            <div class="column">
-            <p>Welcome Dear Admin, <br>Please Login To Proceed !</p>
-            <a class="divLink" href=""><button class="btn-login" id="login">Login</button></a>
-          </div>
-          </div>
-          <form class="login-form" id="login-form"> 
-                          
-            <h1>Login</h1>
 
-            <label for="Username"><b>Username</b></label>
-        
-            <input type="text" placeholder="Enter Username" name="Username" id="Username" required>
-                  
-            <label for="Password"><b>Password</b></label>
-                      
-            <input type="password" placeholder="Enter Password" name="Password" id="Password" required>
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <link href="./styles.css" rel="stylesheet">
+  <title>E-Commerce Admin Landing Page</title>
+</head>
 
-            <button type="submit" class="btn add" id="btn-add">Add</button>
-                      
-            <button type="button" class="btn cancel" id="add-form-btn-cancel">Cancel</button> 
+<body>
+  <div class="hero container">
+    <!-- Start Navigation Bar -->
 
-        </form> 
-          
+    <div class="main">
+      <div class="column" id="column">
+        <p>Welcome Dear Admin, <br>Please Login To Proceed !</p>
+        <a class="divLink" href=""><button class="btn-login" id="login">Login</button></a>
       </div>
-      <!-- <nav class="top-nav">
+      <form class="login-form" id="login-form">
+
+        <h1>Login</h1>
+
+        <label for="Username"><b>Username</b></label>
+
+        <input type="text" placeholder="Enter Username" name="Username" id="Username" required>
+
+        <label for="Password"><b>Password</b></label>
+
+        <input type="password" placeholder="Enter Password" name="Password" id="Password" required>
+
+        <button type="submit" class="btn add" id="btn-form-login">Login</button>
+
+        <button type="button" class="btn cancel" id="btn-form-cancel">Cancel</button>
+
+      </form>
+    </div>
+
+  </div>
+  <!-- <nav class="top-nav">
         <ul class="links">
             
             <a class="divLink" href="./pages/login.html"><button class="btn btn-blue" id="login">Login</button></a>
@@ -48,8 +51,9 @@
   
       </div>
    -->
-      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-      <script src="./scripts/renderer.js"></script>
-      <script src="./scripts/index.js"></script>
-  </body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="./scripts/renderer.js"></script>
+  <script src="./scripts/index.js"></script>
+</body>
+
 </html>
