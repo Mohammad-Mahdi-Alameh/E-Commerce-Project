@@ -39,7 +39,7 @@ function viewItems() {
 
                     + '<li>' + element.name + '</li>'
                     + '<li>' + element.price + '</li>'
-                    + '<li>' + element.trademark + '</li>'
+                    + '<li>' + element.trade_mark + '</li>'
                     + '<li>' + element.model + '</li>'
                     + '<li>' + element.image + '</li>'
                     + '<li>' + element.description + '</li>'
