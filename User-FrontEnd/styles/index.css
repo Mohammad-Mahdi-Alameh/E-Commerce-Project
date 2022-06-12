@@ -9,16 +9,16 @@ body {
     background-color: #f8f8f8;
     color: #1c1e21;
     width: 100%;
-    background: url("../assets/2.jpg");
-    background-size: 80%;
+ 
 }
-
-.main{
-    display: flex;
-    justify-content: center;
+    
+    .main{
+        display: flex;
+        justify-content: center;
     align-items: center;
-    height: 80vh;
+    margin-top: 3%;
     margin-left: 55%;
+    height: 80vh;
     
     color: rgb(0, 0, 0);
     font-family: 'Poppins', sans-serif;
@@ -48,6 +48,8 @@ h1{
 }
 .container {
     width: 100%;
+    background: url("../assets/2.jpg");
+    background-size: 80%;
 }
 
 .btn-blue {
@@ -85,6 +87,52 @@ h1{
       text-decoration: none;
     color: inherit;
 }
+#flex-container{
+    margin-top: 50px;
+    margin-left: 10%;
+    width: 80%;
+    /* height: 200px; */
+    /* border: 1px solid #c3c3c3; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#flex-item{
+    flex:25%;
+    text-align: center;
+    padding:10px;
+    
+}
+#flex-item > ul{
+    list-style: none;
+    background-color: #ee8336;
+    
+    
+}
+
+#flex-item > ul:first-child{
+    font-size:20px;
+    color: #030303; 
+    
+}
+
+#flex-item >  ul > li{
+    padding: 2px;
+    color:#ffffff;   
+}
+
+.zoom {
+    padding: 50px;
+    transition: transform .2s; /* Animation */
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
 
 
 

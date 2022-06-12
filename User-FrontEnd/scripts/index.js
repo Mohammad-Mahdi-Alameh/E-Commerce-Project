@@ -26,7 +26,7 @@ function viewCategories() {
         var string="";
 
         result.forEach(element=>{
-                string += '<div id="flex-item"><ul>'
+                string += '<div id="flex-item" ><ul class="zoom">'
                 
                                 +'<li>' + element.name + '</li>' 
                                 
