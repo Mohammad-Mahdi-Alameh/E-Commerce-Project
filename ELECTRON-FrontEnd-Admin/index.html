@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  
+  <meta http-equiv="Content-Security-Policy" content="default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;">
   <link href="./styles.css" rel="stylesheet">
   <title>E-Commerce Admin Landing Page</title>
 </head>
@@ -25,11 +25,11 @@
 
         <label for="Username"><b>Username</b></label>
 
-        <input type="text" placeholder="Enter Username" name="Username" id="Username" required>
+        <input type="text" placeholder="Enter Username" name="Username" id="username" >
 
         <label for="Password"><b>Password</b></label>
 
-        <input type="password" placeholder="Enter Password" name="Password" id="Password" required>
+        <input type="password" placeholder="Enter Password" name="Password" id="password" >
 
         <button type="submit" class="btn add" id="btn-form-login">Login</button>
 
@@ -53,7 +53,6 @@
    -->
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <script src="./scripts/renderer.js"></script>
-  <script src="./scripts/index.js"></script>
 </body>
 
 </html>
