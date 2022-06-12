@@ -90,6 +90,7 @@ h1{
 #flex-container{
     margin-top: 50px;
     margin-left: 10%;
+    margin-bottom: 20px;
     width: 80%;
     /* height: 200px; */
     /* border: 1px solid #c3c3c3; */
@@ -98,26 +99,33 @@ h1{
     flex-wrap: wrap;
 }
 
-#flex-item{
+.flex-item{
     flex:25%;
-    text-align: center;
     padding:10px;
+    margin-bottom: 20px;
     
 }
-#flex-item > ul{
-    list-style: none;
+
+.flex-item > ul{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: #ee8336;
+    list-style: none;
+    border-radius: 3%;
     
     
 }
 
-#flex-item > ul:first-child{
+.flex-item > ul:first-child{
     font-size:20px;
     color: #030303; 
     
 }
 
-#flex-item >  ul > li{
+.flex-item >  ul > li{
     padding: 2px;
     color:#ffffff;   
 }

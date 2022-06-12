@@ -16,6 +16,8 @@ Route::group(['prefix' => 'user'] , function(){
     Route::post('/signup',[JWTAuthController::class, 'register'])->name("register");
 
     Route::get('/get_categories',[AdminController::class, 'getCategories'])->name("getCategories");
+
+    Route::get('/get_items/{category_name?}',[AdminController::class, 'getItems'])->name("getItems");
     
     Route::group(['middleware' => 'auth.jwt'], function($router) {
         
