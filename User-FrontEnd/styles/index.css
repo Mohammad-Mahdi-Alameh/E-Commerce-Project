@@ -11,15 +11,15 @@ body {
     width: 100%;
  
 }
+
     
-    .main{
-        display: flex;
-        justify-content: center;
+.main{
+    display: flex;
+    justify-content: center;
     align-items: center;
     margin-top: 3%;
     margin-left: 55%;
-    height: 80vh;
-    
+    height: 80vh;  
     color: rgb(0, 0, 0);
     font-family: 'Poppins', sans-serif;
     font-size: xx-large;
@@ -32,7 +32,7 @@ h1{
     display: flex;
     justify-content: end;
     align-items: center;
-    height: 75px;
+    height: 80px;
     width: 100%;
     padding-top:1%;
     padding-right: 8%;
@@ -45,6 +45,7 @@ h1{
     padding: 14px 10px;
     border: none;
     border-radius: 5px;
+
 }
 .container {
     width: 100%;
@@ -56,10 +57,9 @@ h1{
     background-color:   #ee8336;
     color: rgb(255, 255, 255);
     font-weight: bold;
-    font-size: medium;
+    font-size: large;
     cursor: pointer;
-    
-    width:35%;
+    width:100%;
 }
 .links {
     list-style: none;
@@ -86,6 +86,8 @@ h1{
   a, a:hover, a:focus, a:active {
       text-decoration: none;
     color: inherit;
+    z-index: 10;
+  
 }
 #flex-container{
     margin-top: 50px;
@@ -141,6 +143,7 @@ h1{
   .zoom:hover {
     transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
+ 
 
 
 
