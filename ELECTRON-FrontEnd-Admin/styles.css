@@ -1,3 +1,165 @@
-/* styles.css */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-/* Add styles here to customize the appearance of your app */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    color: #1c1e21;
+    width: 100%;
+ 
+}
+
+    
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 7%;
+    padding-right: 50%;
+    height:100vh;
+    color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+    font-size: xx-large;
+    background: url("./assets/3.jpg");
+    background-size: 100%;
+}
+p{
+    font-weight: 700;
+    font-size: 45px;
+    width:100%;
+}
+.top-nav {
+    right: 4%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    height: 80px;
+    width: 100%;
+    padding-top:1%;
+    padding-right: 8%;
+    background-color: #000000;
+    width:100%;
+    
+    
+}
+
+
+
+.btn-login {
+    padding: 14px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color:   #ee8336;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: large;
+    cursor: pointer;
+    width:50%;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+.links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    width: 20%;
+}
+
+.links > li {
+    margin: 40px;
+    cursor: pointer;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  .links > li:first-child {
+    text-decoration: underline;
+    color:#f8f8f8;
+}
+
+
+  a, a:hover, a:focus, a:active {
+      text-decoration: none;
+    color: inherit;
+    z-index: 10;
+  
+}
+#flex-container{
+    margin-top: 50px;
+    margin-left: 10%;
+    margin-bottom: 20px;
+    width: 80%;
+    /* height: 200px; */
+    /* border: 1px solid #c3c3c3; */
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.flex-item{
+    flex:25%;
+    padding:10px;
+    margin-bottom: 20px;
+    
+}
+
+.flex-item > ul{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ee8336;
+    list-style: none;
+    border-radius: 3%;
+    
+    
+}
+
+.flex-item > ul:first-child{
+    font-size:20px;
+    color: #030303; 
+    
+}
+
+.flex-item >  ul > li{
+    padding: 2px;
+    color:#ffffff;   
+}
+
+.zoom {
+    padding: 50px;
+    transition: transform .2s; /* Animation */
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
+ 
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    
+
+    main {
+       flex-direction: column;
+    }
+    .form-container {
+        margin-left:0%; 
+    }
+    
+    .col-logo {
+        text-align: center;
+    }
+    
+}
