@@ -31,6 +31,10 @@ p{
     font-size: 45px;
     width:100%;
 }
+h1{
+    text-align: center;
+    margin-bottom: 7px;
+}
 .top-nav {
     right: 4%;
     display: flex;
@@ -143,6 +147,40 @@ p{
   .zoom:hover {
     transform: scale(1.2); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
   }
+
+  #login-form{
+    display: none;
+    margin: auto;
+    margin-top: 1%;
+    width: 300px;
+    padding: 10px;
+    background-color: #dbe0de;
+  }
+  
+  /* .form-container{
+    display: flex;
+    justify-content: center;
+    margin-top:30%;
+  } */
+  
+  .login-form input  {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 5px 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  
+  .login-form .btn{
+    background-color: #ee8336;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+  }
+  
  
 
 
