@@ -14,9 +14,26 @@
           <div class="main">
             <div class="column">
             <p>Welcome Dear Admin, <br>Please Login To Proceed !</p>
-            <a class="divLink" href="./pages/login.html"><button class="btn-login" id="login">Login</button></a>
+            <a class="divLink" href=""><button class="btn-login" id="login">Login</button></a>
           </div>
           </div>
+          <form class="login-form" id="login-form"> 
+                          
+            <h1>Login</h1>
+
+            <label for="Username"><b>Username</b></label>
+        
+            <input type="text" placeholder="Enter Username" name="Username" id="Username" required>
+                  
+            <label for="Password"><b>Password</b></label>
+                      
+            <input type="password" placeholder="Enter Password" name="Password" id="Password" required>
+
+            <button type="submit" class="btn add" id="btn-add">Add</button>
+                      
+            <button type="button" class="btn cancel" id="add-form-btn-cancel">Cancel</button> 
+
+        </form> 
           
       </div>
       <!-- <nav class="top-nav">
@@ -32,6 +49,7 @@
       </div>
    -->
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-      <script src="./renderer.js"></script>
+      <script src="./scripts/renderer.js"></script>
+      <script src="./scripts/index.js"></script>
   </body>
 </html>
