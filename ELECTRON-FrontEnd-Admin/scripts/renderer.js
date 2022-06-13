@@ -8,6 +8,9 @@ let add_category_btn = document.getElementById("add_category");
 let category_form = document.getElementById("category_form");
 let cancel_add_category = document.getElementById("btn-category-form-cancel");
 let form_add_category_btn = document.getElementById("btn-form-add-category");
+let add_item_btn = document.getElementById("add_item");
+let item_form = document.getElementById("item_form");
+let cancel_add_item= document.getElementById("btn-item-form-cancel");
 let logout = document.getElementById("logout");
 var token;
 
@@ -77,6 +80,15 @@ add_category_btn.addEventListener("click", function (event) {
     popUpAddCategoryForm();
 
 });
+
+add_item_btn.addEventListener("click", function (event) {
+
+
+    event.preventDefault();
+    popUpAddItemForm();
+
+});
+
 
 
 
