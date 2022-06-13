@@ -18,14 +18,19 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 3%;
-    margin-left: 55%;
+    margin-left: 60%;
     height: 80vh;  
     color: rgb(0, 0, 0);
     font-family: 'Poppins', sans-serif;
     font-size: xx-large;
 }
 h1{
-    width:15vw;
+    font-size:45px ;
+    padding: 4%;
+    width:88%;
+    color:white;
+    background-color: #1c1e21;
+    border-radius: 3%;
 }
 .top-nav {
     right: 4%;
@@ -106,10 +111,12 @@ h1{
     padding:10px;
     margin-bottom: 20px;
     
+    
 }
 
 .flex-item > ul{
-    
+    width:30vw;
+    height:60vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,6 +136,8 @@ h1{
 
 .flex-item >  ul > li{
     padding: 2px;
+    font-size: 30px;
+    font-weight: bold;
     color:#ffffff;   
 }
 
