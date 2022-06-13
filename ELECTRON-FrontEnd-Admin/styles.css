@@ -20,7 +20,7 @@ body {
 }
     
 .main{
-    padding-top: 7%;
+    padding-top: 3%;
     padding-right: 50%;
     display: flex;
     justify-content: center;
@@ -155,17 +155,20 @@ h1{
 
   .login-form{
     margin: auto;
-    margin-top: 1%;
     width: 300px;
     padding: 10px;
     background-color: #ffffff;
     border-radius: 3%;
-  }
-  #login-form{
+}
+#login-form{
     display: none;
-  }
-  #item_form{
+}
+#item_form{
     display: none;
+    
+    flex-direction: column;
+    flex-wrap: wrap;
+    height:90vh;
   }
   
   /* .form-container{
@@ -173,6 +176,14 @@ h1{
     justify-content: center;
     margin-top:30%;
   } */
+  #item-form input  {
+    width: 30%;
+    padding: 15px;
+    margin: 10px 5px 22px 0;
+    border: none;
+    background: #cdcaca;
+    border-radius: 3%;
+  }
   
   .login-form input  {
     width: 100%;

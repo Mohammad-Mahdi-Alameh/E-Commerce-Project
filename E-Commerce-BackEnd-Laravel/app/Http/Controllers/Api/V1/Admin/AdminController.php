@@ -59,7 +59,7 @@ class AdminController extends Controller
             'image' => 'required|string|min:2', 
             'description' => 'string|min:2',
             'usage' => 'required|string|',
-            'category_name' => 'int',
+            'category_name' => 'string',
 
         ]);
 
@@ -68,7 +68,15 @@ class AdminController extends Controller
 
         // $category_id = fgetIdByName() here a function to check if user entered valid category
         $record = Category::where("name","=",$request->category_name)->get();
+        
+        if(count($record) == 0){
+            return response()->json([
+                'message' => 'There is no such category!',
+                
+            ]);
+        }
         $category_id = json_decode($record,true)[0]["id"];
+        
 
         $item->name = $request->name;
         $item->price = $request->price;
