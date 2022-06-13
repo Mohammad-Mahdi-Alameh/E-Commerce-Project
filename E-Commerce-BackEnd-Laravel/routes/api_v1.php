@@ -25,7 +25,6 @@ Route::group(['prefix' => 'user'] , function(){
         
         Route::get('/get_logged_user',[JWTAuthController::class, 'getLoggedInUser'])->name("getLoggedInUser");
         
-        // Route::get('/test',[UserController::class, 'Test'])->name("test");
     });
 });
 
@@ -36,7 +35,7 @@ Route::group(['prefix' => 'admin'] , function(){
         Route::group(['middleware' => 'admin.check'], function($router) {
             
             Route::post('/logout',[JWTAuthController::class, 'logout'])->name("logout");
-            // Route::get('/test',[UserController::class, 'Test'])->name("test");
+            
             Route::post('/add_category',[AdminController::class, 'addCategory'])->name("addCategory");
             
             Route::post('/add_item',[AdminController::class, 'addItem'])->name("addtem");
