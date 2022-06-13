@@ -8,6 +8,7 @@ let add_category_btn = document.getElementById("add_category");
 let category_form = document.getElementById("category_form");
 let cancel_add_category = document.getElementById("btn-category-form-cancel");
 let form_add_category_btn = document.getElementById("btn-form-add-category");
+let logout = document.getElementById("logout");
 var token;
 
 function checkToken() {
@@ -42,6 +43,14 @@ form_add_category_btn.addEventListener("click", function (event) {
 
     event.preventDefault();
     addCategory();
+
+});
+
+logout.addEventListener("click", function (event) {
+
+
+    event.preventDefault();
+    logOut();
 
 });
 
@@ -161,8 +170,6 @@ function login() {
 
                     if (is_admin === "1") {
 
-                        alert("Welcome Admin!");
-
                         login_form.style.display = "none";
                         column.style.display = "none";
                         successful_login.style.display = "block";
@@ -190,7 +197,6 @@ function addCategory() {
 
         alert("Please fill the missing fields!")
     } else {
-        console.log(name);
         let data = new FormData();
 
         data.append('name', name);
@@ -203,7 +209,7 @@ function addCategory() {
 
             url: url,
 
-            headers:{ 'Authorization': 'Bearer ' + token },
+            headers: { 'Authorization': 'Bearer ' + localStorage.getItem("token") },
 
             data: data,
 
@@ -218,12 +224,48 @@ function addCategory() {
 
                 if (message === "Category added successfully") {
 
-                    alert(message);
+                    alert("Category added successfully, please check it in the user page (and sorry for this but i don't have much time to view it here in a nice design)!");
 
                 }
-                else{
+                else {
                     alert("Category already exists or the name is too short, try again !")
                 }
             });
     }
 }
+
+function logOut() {
+
+    let url = 'http://127.0.0.1:8000/api/v1/admin/logout';
+
+    axios({
+
+        method: 'POST',
+
+        url: url,
+
+        headers: { 'Authorization': 'Bearer ' + localStorage.getItem("token") },
+
+    })
+
+        .then(function (response) {
+
+
+            let result = response.data;
+
+            let message = result.status;
+
+            if (message === "success") {
+
+                localStorage.removeItem("token");
+                successful_login.style.display="none";
+                column.style.display="block";
+
+            }
+            else {
+                alert("Unknown error occured, try again !")
+            }
+        });
+}
+
+

@@ -35,6 +35,7 @@ Route::group(['prefix' => 'admin'] , function(){
         
         Route::group(['middleware' => 'admin.check'], function($router) {
             
+            Route::post('/logout',[JWTAuthController::class, 'logout'])->name("logout");
             // Route::get('/test',[UserController::class, 'Test'])->name("test");
             Route::post('/add_category',[AdminController::class, 'addCategory'])->name("addCategory");
             
