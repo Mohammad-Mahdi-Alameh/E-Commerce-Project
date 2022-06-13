@@ -1,7 +1,3 @@
-///
-// window.onload = checkToken();
-///
-
 let login_btn = document.getElementById("login");
 let login_form = document.getElementById("login-form");
 let column = document.getElementById("column");
@@ -11,6 +7,7 @@ let successful_login = document.getElementById("successful_login");
 let add_category_btn = document.getElementById("add_category");
 let category_form = document.getElementById("category_form");
 let cancel_add_category = document.getElementById("btn-category-form-cancel");
+let form_add_category_btn = document.getElementById("btn-form-add-category");
 var token;
 
 function checkToken() {
@@ -40,6 +37,14 @@ login_form_button.addEventListener("click", function (event) {
 
 });
 
+form_add_category_btn.addEventListener("click", function (event) {
+
+
+    event.preventDefault();
+    addCategory();
+
+});
+
 cancel_login.addEventListener("click", function (event) {
 
 
@@ -66,6 +71,13 @@ add_category_btn.addEventListener("click", function (event) {
 
 
 
+
+
+
+////
+checkToken();
+////
+
 function popUpLoginForm() {
 
     login_form.style.display = "block";
@@ -79,7 +91,24 @@ function hideLoginForm() {
     column.style.display = "block";
 
 }
-checkToken();
+
+function popUpAddCategoryForm() {
+
+
+    successful_login.style.display = "none";
+    category_form.style.display = "block";
+
+}
+
+function hideAddCategoryForm() {
+
+    login_form.style.display = "none";
+    column.style.display = "none";
+    category_form.style.display = "none";
+    successful_login.style.display = "block";
+
+}
+
 function login() {
 
     const username = document.getElementById("username").value;
@@ -155,21 +184,46 @@ function login() {
 
     }
 }
+function addCategory() {
+    const name = document.getElementById("Category_Name").value;
+    if (name == "") {
 
-function popUpAddCategoryForm() {
+        alert("Please fill the missing fields!")
+    } else {
+        console.log(name);
+        let data = new FormData();
+
+        data.append('name', name);
+
+        let url = 'http://127.0.0.1:8000/api/v1/admin/add_category';
+
+        axios({
+
+            method: 'POST',
+
+            url: url,
+
+            headers:{ 'Authorization': 'Bearer ' + token },
+
+            data: data,
+
+        })
+
+            .then(function (response) {
 
 
-    successful_login.style.display = "none";
-    category_form.style.display = "block";
+                let result = response.data;
 
+                let message = result.message;
+
+                if (message === "Category added successfully") {
+
+                    alert(message);
+
+                }
+                else{
+                    alert("Category already exists or the name is too short, try again !")
+                }
+            });
+    }
 }
-
-function hideAddCategoryForm() {
-
-    login_form.style.display = "none";
-    column.style.display = "none";
-    category_form.style.display = "none";
-    successful_login.style.display = "block";
-
-}
-

@@ -30,7 +30,7 @@ class AdminController extends Controller
         ]);
 
         if($validator->fails()) {
-            return response()->json($validator->errors(), 401);
+            return response()->json(["message" => "failed to add category"]);
         }
 
      
