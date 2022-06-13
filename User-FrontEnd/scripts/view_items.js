@@ -9,6 +9,23 @@ let flex_container = document.getElementById("flex-container");
 
 
 function viewItems() {
+
+    token = localStorage.getItem("token")
+    if (token) {
+
+        let signup = document.getElementById("signup");
+        let login = document.getElementById("login");
+        let signout = document.getElementById("signout");
+
+        signup.style.display = "none";
+        login.style.display="none";
+        signout.style.display="block";
+
+    }
+
+
+
+
     let urlString = window.location.href;
     let paramString = urlString.split('?')[1];
     let queryString = new URLSearchParams(paramString);
@@ -34,7 +51,7 @@ function viewItems() {
             var string = "";
 
             result.forEach(element => {
-                
+
                 string += '<div class="flex-item" id=' + element.id + '><ul class="zoom">'
 
                     + '<li>' + element.name + '</li>'
@@ -55,34 +72,44 @@ function viewItems() {
 
             let like_no = document.getElementsByClassName("like-no");
             for (let i = 0; i < like_no.length; i++) {
-                
+
                 // flex_items[i].addEventListner("click",viewItems);
                 like_no[i].addEventListener("click", function (event) {
-                    
+
                     // console.log(this);
                     event.preventDefault();
-                    string="<img src="+"../assets/like.svg"+">";
-                    like_no[i].innerHTML=string;
-                    
-                    
-                });}
-                
-                
-            });
-            
-            
-        }
-        
-        function checkToken() {
-            token = localStorage.getItem("token")
-            if (token) {
-        
-                column.style.display = "none";
-                successful_login.style.display = "block";
-        
+                    var token = localStorage.getItem("token")
+                    if (token) {
+                        string = "<img src=" + "../assets/like.svg" + ">";
+                        like_no[i].innerHTML = string;
+                    } else
+
+                        window.location.href = "../pages/login.html";
+
+
+                });
             }
-            else
-                column.style.display = "block";
-        
-        }
-        
+
+
+        });
+
+
+}
+
+function checkToken() {
+    token = localStorage.getItem("token")
+    if (token) {
+
+        column.style.display = "none";
+        successful_login.style.display = "block";
+
+    }
+    else
+        column.style.display = "block";
+
+}
+
+
+
+
+

@@ -52,6 +52,9 @@ h1{
     border-radius: 5px;
 
 }
+#signout{
+    display:none;
+}
 .container {
     width: 100%;
     background: url("../assets/2.jpg");
