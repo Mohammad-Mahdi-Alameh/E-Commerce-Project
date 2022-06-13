@@ -53,9 +53,9 @@ login.addEventListener("click", function(event){
    
             document.getElementById("password").value = "";
     
-            if(is_admin === 0 )
+            if(is_admin === "0" )
 
-                alert("Welcome User!");
+                window.location.href = "../index.html"
             
             else
             

@@ -111,8 +111,8 @@ button.addEventListener("click", function (event) {
                     radioButton.checked = false;
                 }
 
-                alert("Sign Up Successfully!")
-
+                window.location.href = "../index.html";
+                
             } else {
                 if (message === "Validator Failed ! Check your submitted values again!") {
 
