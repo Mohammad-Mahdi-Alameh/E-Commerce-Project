@@ -44,6 +44,8 @@ function viewItems() {
                     + '<li>' + element.image + '</li>'
                     + '<li>' + element.description + '</li>'
                     + '<li>' + element.usage + '</li>'
+                    + '<li><a class="like-no" href=""><img src="../assets/dislike.svg" ></a></li>'
+
 
                     + '</ul></div>';
 
@@ -51,11 +53,36 @@ function viewItems() {
 
             flex_container.innerHTML = string;
 
-
-        });
-
-
-}
-
-
-
+            let like_no = document.getElementsByClassName("like-no");
+            for (let i = 0; i < like_no.length; i++) {
+                
+                // flex_items[i].addEventListner("click",viewItems);
+                like_no[i].addEventListener("click", function (event) {
+                    
+                    // console.log(this);
+                    event.preventDefault();
+                    string="<img src="+"../assets/like.svg"+">";
+                    like_no[i].innerHTML=string;
+                    
+                    
+                });}
+                
+                
+            });
+            
+            
+        }
+        
+        function checkToken() {
+            token = localStorage.getItem("token")
+            if (token) {
+        
+                column.style.display = "none";
+                successful_login.style.display = "block";
+        
+            }
+            else
+                column.style.display = "block";
+        
+        }
+        
