@@ -177,9 +177,9 @@ h1{
     justify-content: center;
     margin-top:30%;
   } */
-  #item-form input  {
-    width: 30%;
-    padding: 15px;
+  #item_form input  {
+    width: 90%;
+    padding: 20px;
     margin: 10px 5px 22px 0;
     border: none;
     background: #cdcaca;
