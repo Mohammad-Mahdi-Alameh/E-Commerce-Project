@@ -41,6 +41,7 @@ function logOut() {
                 login.style.display="none";
                 signup.style.display="none";
                 logout.style.display="block";
+                window.location.href = "./index.html";
 
             }
             else {
