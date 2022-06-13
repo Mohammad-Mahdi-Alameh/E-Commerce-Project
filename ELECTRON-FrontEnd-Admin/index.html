@@ -17,7 +17,7 @@
     <div class="main">
       <div class="column" id="column">
         <p>Welcome Dear Admin, <br>Please Login To Proceed !</p>
-        <a class="divLink" href=""><button class="btn-login" id="login">Login</button></a>
+        <a class="divLink" href=""><button class="btn" id="login">Login</button></a>
       </div>
       <form class="login-form" id="login-form">
 
@@ -31,9 +31,29 @@
 
         <input type="password" placeholder="Enter Password" name="Password" id="password" >
 
-        <button type="submit" class="btn add" id="btn-form-login">Login</button>
+        <button type="submit" class="formBtn" id="btn-form-login">Login</button>
 
-        <button type="button" class="btn cancel" id="btn-form-cancel">Cancel</button>
+        <button type="button" class="formBtn" id="btn-login-form-cancel">Cancel</button>
+
+      </form>
+
+      <div class="column" id="successful_login">
+        <p>Welcome Again Dear Admin , <br>Please Check The Options Below !</p>
+        <a class="divLink" href=""><button class="btn" id="add_category">Add Category</button></a>
+        <a class="divLink" href=""><button class="btn" id="add_item">Add Item</button></a>
+      </div>
+
+      <form class="login-form" id="category_form">
+
+        <h1>Add Category</h1>
+
+        <label for="Category Name"><b>Category Name</b></label>
+
+        <input type="text" placeholder="Enter Category Name" name="Category_Name" id="Category_Name" >
+
+        <button type="submit" class="formBtn" id="btn-form-add-category">Add</button>
+
+        <button type="button" class="formBtn" id="btn-category-form-cancel">Cancel</button>
 
       </form>
     </div>
