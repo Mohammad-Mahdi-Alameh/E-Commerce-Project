@@ -340,7 +340,7 @@ function addItem() {
         data.append('category_name', category_name);
      
 
-        let url = 'http://127.0.0.1:8000/api/v1/admin/add_item';
+        let url = 'http://127.0.0.1:8000/api/v2/admin/add_item';
 
         axios({
 

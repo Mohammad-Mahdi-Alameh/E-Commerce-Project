@@ -97,13 +97,15 @@ function viewItems() {
 
             result.forEach(element => {
 
+                var image = atob(element.image);
+
                 string += '<div class="flex-item" id=' + element.id + '><ul class="zoom">'
 
+                + '<li><img src=../assets/' + image + '></li>'
                     + '<li>' + element.name + '</li>'
                     + '<li>' + element.price + '</li>'
                     + '<li>' + element.trade_mark + '</li>'
                     + '<li>' + element.model + '</li>'
-                    + '<li>' + element.image + '</li>'
                     + '<li>' + element.description + '</li>'
                     + '<li>' + element.usage + '</li>'
                     + '<li><a class="like-no" href=""><img src="../assets/dislike.svg" ></a></li>'

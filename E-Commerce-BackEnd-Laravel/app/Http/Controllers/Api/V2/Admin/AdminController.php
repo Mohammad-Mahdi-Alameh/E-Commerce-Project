@@ -77,8 +77,7 @@ class AdminController extends Controller
         }
         $category_id = json_decode($record,true)[0]["id"];
 
-        $img = file_get_contents($request->image);
-
+        $img =basename($request->image);
         $data = base64_encode($img);
 
 

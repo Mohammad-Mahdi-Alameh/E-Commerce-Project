@@ -98,7 +98,7 @@ h1{
   
 }
 #flex-container{
-    margin-top: 50px;
+    margin-top: 10px;
     margin-left: 10%;
     margin-bottom: 20px;
     width: 80%;
@@ -115,11 +115,12 @@ h1{
     margin-bottom: 20px;
     
     
+    
 }
 
 .flex-item > ul{
     width:30vw;
-    height:60vh;
+    height:80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -132,7 +133,7 @@ h1{
 }
 
 .flex-item > ul:first-child{
-    font-size:20px;
+    font-size:15px;
     color: #030303; 
     
 }
