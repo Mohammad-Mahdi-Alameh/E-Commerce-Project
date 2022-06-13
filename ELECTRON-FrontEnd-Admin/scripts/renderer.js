@@ -11,6 +11,7 @@ let form_add_category_btn = document.getElementById("btn-form-add-category");
 let add_item_btn = document.getElementById("add_item");
 let item_form = document.getElementById("item_form");
 let cancel_add_item= document.getElementById("btn-item-form-cancel");
+let form_add_item_btn = document.getElementById("btn-form-add-item");
 let logout = document.getElementById("logout");
 var token;
 
@@ -38,6 +39,14 @@ login_form_button.addEventListener("click", function (event) {
 
     event.preventDefault();
     login();
+
+});
+
+form_add_item_btn.addEventListener("click", function (event) {
+
+
+    event.preventDefault();
+    addItem();
 
 });
 
@@ -70,6 +79,14 @@ cancel_add_category.addEventListener("click", function (event) {
 
     event.preventDefault();
     hideAddCategoryForm();
+
+});
+
+cancel_add_item.addEventListener("click", function (event) {
+
+
+    event.preventDefault();
+    hideAddItemForm();
 
 });
 
@@ -128,6 +145,18 @@ function hideAddCategoryForm() {
     category_form.style.display = "none";
     successful_login.style.display = "block";
 
+}
+
+function  popUpAddItemForm() {
+    successful_login.style.display = "none";
+    login_form.style.display = "none";
+    item_form.style.display="flex";
+}
+
+function  hideAddItemForm() {
+    login_form.style.display = "none";
+    item_form.style.display="none";
+    successful_login.style.display = "block";
 }
 
 function login() {
@@ -236,7 +265,7 @@ function addCategory() {
 
                 if (message === "Category added successfully") {
 
-                    alert("Category added successfully, please check it in the user page (and sorry for this but i don't have much time to view it here in a nice design)!");
+                    alert("Category added successfully, please check it in the user page (and very very sorry for this but i don't have much time till the moment to view it here so I can do the rest of the main features)!");
 
                 }
                 else {
@@ -280,4 +309,66 @@ function logOut() {
         });
 }
 
+function addItem() {
 
+
+    
+    const name = document.getElementById("Item_Name").value;
+    const price = document.getElementById("Item_price").value;
+    const trade_mark = document.getElementById("Item_trade_mark").value;
+    const model = document.getElementById("Item_model").value;
+    const image = document.getElementById("Item_image").value;
+    const description = document.getElementById("Item_description").value;
+    const usage = document.getElementById("Item_usage").value;
+    const category_name = document.getElementById("Item_category_name").value;
+    
+
+
+    if (name == "" ||price == "" ||trade_mark == "" ||model == "" ||image == "" ||description == "" ||usage == "" ||category_name == "" ) {
+
+        alert("Please fill the missing fields!")
+    } else {
+        let data = new FormData();
+
+        data.append('name', name);
+        data.append('price', price);
+        data.append('trade_mark', trade_mark);
+        data.append('model', model);
+        data.append('image', image);
+        data.append('description', description);
+        data.append('usage', usage);
+        data.append('category_name', category_name);
+     
+
+        let url = 'http://127.0.0.1:8000/api/v1/admin/add_item';
+
+        axios({
+
+            method: 'POST',
+
+            url: url,
+
+            headers: { 'Authorization': 'Bearer ' + localStorage.getItem("token") },
+
+            data: data,
+
+        })
+
+            .then(function (response) {
+
+
+                let result = response.data;
+
+                let message = result.message;
+
+                if (message === "Item added successfully") {
+
+                    alert("Item added successfully, please check it in the user page (and very very sorry for this but i don't have much time till the moment to view it here so I can do the rest of the main features )!");
+
+                }
+                else {
+                    alert("There is no such category, try again !")
+                }
+            });
+    }
+}
