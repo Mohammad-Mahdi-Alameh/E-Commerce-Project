@@ -12,7 +12,7 @@ body {
  
 }
 .column{
-    display:block;
+    display:none;
     padding-left: 10%;
     color: rgb(255, 255, 255);
     font-family: 'Poppins', sans-serif;

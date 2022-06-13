@@ -1,5 +1,5 @@
 ///
-window.onload = checkToken();
+// window.onload = checkToken();
 ///
 
 let login_btn = document.getElementById("login");
@@ -21,6 +21,9 @@ function checkToken() {
         successful_login.style.display = "block";
 
     }
+    else
+        column.style.display = "block";
+
 }
 login_btn.addEventListener("click", function (event) {
 
@@ -76,7 +79,7 @@ function hideLoginForm() {
     column.style.display = "block";
 
 }
-
+checkToken();
 function login() {
 
     const username = document.getElementById("username").value;
